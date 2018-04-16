@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./../osnovni.xhtml">
+
+            <ui:define name="top">
+                
+            </ui:define>
+
+            <ui:define name="content">
+                 <b:container fluid="true">
+                    <h2>
+                        <b:row>  
+                            <b:column medium-screen="6" offset="3">
+                                <b:label value="Employees:"   />
+                            </b:column>
+                        </b:row>
+                    </h2>
+                    <b:row>  
+                        <br></br>
+                    </b:row>
+                    <h:form styleClass="jsfcrud_list_form">
+<!--                          <b:label  value="#{bundle.ListDepartmentsEmpty}" rendered="#{employeesController.items.rowCount == 0}"/>-->
+                        <!--<b:panelGrid rendered="#{employeesController.items.rowCount > 0}">-->
+
+                        <br />
+                        <b:commandLink outcome="/employees/Create1" value="#{bundle.ListEmployeesCreateLink}" look="default" style="width: 200px"/>
+                
+
+                        <b:dataTable value="#{employeesController.items}"  var="item" pdf="true">
+                              <b:dataTableColumn  value="#{item.empNo}" />
+                              <b:dataTableColumn  value="#{item.birthDate}" data-type="string"  ></b:dataTableColumn>
+                              <b:dataTableColumn  value="#{item.firstName}" />
+                              <b:dataTableColumn  value="#{item.lastName}" />
+                              <b:dataTableColumn  value="#{item.gender}" />
+                            <b:dataTableColumn  value="#{item.hireDate}" data-type="string" /> 
+                                
+                            <b:dataTableColumn  >
+                               <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{employeesController.prepareView}" value="#{bundle.ListEmployeesViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{employeesController.prepareEdit}" value="#{bundle.ListEmployeesEditLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{employeesController.destroy}" value="#{bundle.ListEmployeesDestroyLink}"/>
+                        </h:column>
+                            </b:dataTableColumn>
+
+
+                        </b:dataTable>
+
+              
+
+                    </h:form>
+
+
+
+
+                </b:container>
+                
+                
+            </ui:define>
+
+            <ui:define name="bottom">
+                
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

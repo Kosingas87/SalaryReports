@@ -1,0 +1,280 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:b="http://bootsfaces.net/ui">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+     
+        <title>Facelets Template</title>
+    </h:head>
+
+<h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+        <title>Facelets Template</title>
+    </h:head>
+
+    <h:body>
+
+        <div id="top">
+            <h:form>
+                <h:form >
+                    <p:sidebar widgetVar="sidebar1" baseZIndex="10000"   >
+                        <h:form>
+                            <br />
+                            <h1 style="font-weight:normal">      Dashboard</h1>
+                            <br />
+                            <br />
+                            <b:button outcome="/employees/List1" value="Employees" icon="ui-icon-star" style="width: 250px" />
+                            <br />
+                            <b:button outcome="/departments/List1" value="Departements" icon="ui-icon-star" style="width: 250px" />
+                            <br />
+                            <b:button outcome="/deptEmp/List1" value="Employers in departments" icon="ui-icon-star" style="width: 250px" />
+                            <br />
+                            <b:button outcome="/deptManager/List1" value="Managers" icon="ui-icon-star" style="width: 250px" />
+                            <br />
+                            <b:button outcome="/salaries/List1" value="Salaries" icon="ui-icon-star" style="width: 250px"/>
+                            <br />
+                            <b:button outcome="/titles/List1" value="Titles" icon="ui-icon-star" style="width: 250px"/>
+<!--                            <p:menu>
+                                <p:submenu label="Dashboard">
+                                    <p:menuitem value="Employers" outcome="/employees/List1" update="messages" icon="ui-icon-disk" />
+                                    <p:menuitem value="Departements" outcome="/departments/List1" update="messages" icon="ui-icon-arrowrefresh-1-w"/>
+                                    <p:menuitem value="Employers in departments" outcome="/deptEmp/List1"  update="messages" icon="ui-icon-disk" />
+                                    <p:menuitem value="Managers" outcome="/deptManager/List1" update="messages" icon="ui-icon-disk" />
+                                    <p:menuitem value="Salaries" outcome="/salaries/List1" update="messages" icon="ui-icon-disk" />
+                                    <p:menuitem value="Titles" outcome="/titles/List1" update="messages" icon="ui-icon-disk" />
+                                </p:submenu>
+
+                            </p:menu>-->
+                        </h:form>
+<br />
+<br />
+                        <p:commandButton value="Cancel" oncomplete="PF('sidebar1').hide()"/>
+                    </p:sidebar>
+                </h:form>
+                <h:form>
+                    <!--                <b:navBar brand="Dashboard"  brandHref="#"  fluid="true" sticky="false" static="true" >
+                                        
+                     = <b:navbarLinks>
+                        <b:navLink value"Company"  oncomplete="PF('sidebar1').show()" ></b:navLink>
+                        <b:navLink value="Link" href="#"></b:navLink>
+                        <b:dropMenu value="Dropdown" iconAwesome="birthday-cake">
+                          <b:navLink value="Action" href="#"></b:navLink>
+                          <b:navLink value="Another action" href="#"></b:navLink>
+                          <b:navLink value="Something else here" href="#"></b:navLink>
+                          <b:navLink></b:navLink>
+                          <b:navLink header="Nav header"></b:navLink>
+                          <b:navLink value="Separated link" href="#"></b:navLink>
+                          <b:dropMenu value="Nested submenu" iconAwesome="birthday-cake" iconAlign="right">
+                            <b:navLink value="You can nest menus" href="#"></b:navLink>
+                            <b:dropMenu value="Nested sub-submenu">
+                              <b:navLink value="... as deep as ..." href="#"></b:navLink>
+                              <b:dropMenu value="Nested sub-sub-submenu">
+                                <b:navLink value="... you want!" href="#"></b:navLink>
+                              </b:dropMenu>
+                            </b:dropMenu>
+                     
+                          </b:dropMenu>
+                          <b:navLink value="One more separated link" href="#"></b:navLink>
+                        </b:dropMenu>
+                      </b:navbarLinks>
+                      
+                       Following line is needed for TBS 3.0.1 (panel content overflow issue) 
+                    <b:navbarLinks pull="right"><b:navLink value="    " href="#"></b:navLink></b:navbarLinks>
+                      <b:navbarLinks pull="right" styleClass="hidden-xs">
+                        <b:navLink value="Link" href="#" oncomplete="PF('sidebar1').show()" ></b:navLink>
+                        <b:dropMenu value="Dropdown">
+                          <b:navLink value="Action" href="#"></b:navLink>
+                          <b:navLink value="Another action" href="#"></b:navLink>
+                          <b:navLink value="Something else here" href="#"></b:navLink>
+                          <b:navLink></b:navLink>
+                          <b:navLink header="Nav header"></b:navLink>
+                          <b:navLink value="Separated link" href="#"></b:navLink>
+                          <b:navLink value="One more separated link" href="#"></b:navLink>
+                        </b:dropMenu>
+                      </b:navbarLinks>
+                    </b:navBar>-->
+                    <!--               
+                                                    <p:menubar>
+                                        <p:menuitem value="Dashboard" oncomplete="PF('sidebar1').show()"   />
+                                        <p:submenu label="Kupac">
+                                            <p:menuitem value="Unos kupca"  />
+                                            <p:menuitem value="Prikaz kupca" url="" />
+                                        </p:submenu>
+                                        <p:submenu label="Proizvod">          
+                                            <p:menuitem value="Unos proizvoda"  />
+                                            <p:menuitem value="Prikaz kupca"  />                                  
+                                        </p:submenu>
+                                        <p:menuitem value="Unos proizvoda" oncomplete="PF('sidebar1').show()"   />
+                                    </p:menubar>-->
+                    <b:container fluid="true">
+                    <b:buttonToolbar>
+                    <!--<b:buttonGroup contentDisabled="#{buttonGroupsBean.contentDisabled}">-->
+
+                        <b:button look="info" value="Dashboard" onclick="PF('sidebar1').show()"  iconAwesome="navicon" size="lg" style="width: 150px" hidden="xs" />  
+
+
+
+                        <!--        <b:dropButton look="info" value="Employees" >
+                                    <b:navLink value="Create Employee" onclick="/employees/List"  ></b:navLink>
+                                  <b:navLink value="View Employee" href="employees/List.xhtml" ></b:navLink>
+                                  </b:dropButton>
+                                  
+                                    <b:dropButton look="info" value="Departments" >
+                                  <b:navLink value="Create Departments" href="#" ></b:navLink>
+                                  <b:navLink value="View Departments" href="#" ></b:navLink>
+                                  </b:dropButton>
+                                   <b:dropButton look="info" value="Employees-Departments" >
+                                  <b:navLink value="Create Employees in Departments" href="#" ></b:navLink>
+                                  <b:navLink value="View Employees in Departments" href="#" ></b:navLink>
+                                  </b:dropButton>
+                                  <b:dropButton look="info" value="Salaries" >
+                                  <b:navLink value="Create Salaries" href="#" ></b:navLink>
+                                  <b:navLink value="View Salaries" href="#" ></b:navLink>
+                                  </b:dropButton>
+                                     <b:dropButton look="info" value="Managers" >
+                                  <b:navLink value="Create Managers" href="#" ></b:navLink>
+                                  <b:navLink value="View Managers" href="#" ></b:navLink>
+                                  </b:dropButton>
+                                  <b:dropButton look="info" value="Titles" >
+                                  <b:navLink value="Create Titles" href="#" ></b:navLink>
+                                  <b:navLink value="View Titles" href="#" ></b:navLink>
+                                  </b:dropButton>
+                        </b:buttonGroup>
+                            <b:buttonGroup pull="right" >
+                            <b:button look="info"   value="logout"  />
+                            </b:buttonGroup>-->
+                       
+                        <b:navbarLinks pull="left" style="info" >
+
+                            <b:navLink value="  Home" iconAwesome="home"  outcome="/glavna" ></b:navLink>
+
+                            <b:dropMenu value="  Company" iconAwesome="briefcase">
+
+                                <b:dropMenu value="Employees" iconAwesome="group" iconAlign="left">
+                                    <b:navLink value="Employees List" outcome="/employees/List1"></b:navLink>
+
+                                    <b:navLink value="Add Employee" outcome="/employees/Create1"></b:navLink>
+
+
+                                </b:dropMenu>
+                                <b:dropMenu value="Departments" iconAwesome="desktop" iconAlign="left">
+                                    <b:navLink value="Departments List" outcome="/departments/List1"></b:navLink>
+
+                                    <b:navLink value="Add Department" outcome="/departments/Create1"></b:navLink>
+
+
+                                </b:dropMenu>
+                                <b:dropMenu value="Employees in Departments" iconAwesome="street-view" iconAlign="left">
+                                    <b:navLink value="Employees in Departments List" outcome="/deptEmp/List1"></b:navLink>
+
+                                    <b:navLink value="Add Employees in Departments" outcome="/deptEmp/Create1"></b:navLink>
+
+
+                                </b:dropMenu>
+                                <b:dropMenu value="Titles" iconAwesome="mortar-board" iconAlign="left">
+                                    <b:navLink value="Titles List" outcome="/titles/List1"></b:navLink>
+
+                                    <b:navLink value="Add Titles" outcome="/titles/Create1"></b:navLink>
+
+
+                                </b:dropMenu>
+                                <b:dropMenu value="Managers" iconAwesome="key" iconAlign="left">
+                                    <b:navLink value="Managers List" outcome="/deptManager/List1"></b:navLink>
+
+                                    <b:navLink value="Add Managers" outcome="/deptManager/Create1"></b:navLink>
+                                </b:dropMenu>
+                                <b:dropMenu value="Salaries" iconAwesome="dollar" iconAlign="left">
+                                    <b:navLink value="Salaries List" outcome="/salaries/List1" ></b:navLink>
+
+                                    <b:navLink value="Add Salaries" outcome="/salaries/Create1"></b:navLink>
+
+
+                                </b:dropMenu>
+
+
+
+                            </b:dropMenu>
+                             <b:dropMenu value="  Reports" iconAwesome="file-text">
+                            <b:navLink value="  Salary reports" iconAwesome="dollar" outcome="/report/reportSalaries"  ></b:navLink>
+                            <b:navLink value="  Info" href="#"></b:navLink>
+                             </b:dropMenu>
+                        </b:navbarLinks>
+                        <b:navbarLinks pull="right"><b:navLink value="    " href="#"></b:navLink></b:navbarLinks>
+                        <b:navbarLinks pull="right" styleClass="hidden-xs">
+                            <b:navLink value="Link" href="#"></b:navLink>
+                            <b:dropMenu value="Dropdown">
+                                <b:navLink value="Action" href="#"></b:navLink>
+                                <b:navLink value="Another action" href="#"></b:navLink>
+                                <b:navLink value="Something else here" href="#"></b:navLink>
+                                <b:navLink></b:navLink>
+                                <b:navLink header="Nav header"></b:navLink>
+                                <b:navLink value="Separated link" href="#"></b:navLink>
+                                <b:navLink value="One more separated link" href="#"></b:navLink>
+                            </b:dropMenu>
+                        </b:navbarLinks>
+
+                    </b:buttonToolbar>     
+
+
+                    </b:container>
+
+
+                </h:form>
+                <ui:insert name="top"></ui:insert>
+            </h:form>
+        </div>
+        <div>
+<!--            <div id="left">
+                                <h:form>
+                                    <b:column span="3">
+                                        <b:panel look="info"  title="Dashboard" col-lg="10" col-md="6" col-xs="4" >
+                    <b:listLinks>
+                      <b:navLink header="BootsFaces" />
+                      <b:navLink href="http://www.bootsfaces.net" value="BootsFaces"
+                                 icon="globe" iconAlign="right"/>
+                      <b:navLink></b:navLink>
+                      <b:navLink header="Bootstrap"/>
+                      <b:navLink href="http://getbootstrap.com/components/#navbar" value="Bootstrap" icon="link"></b:navLink>
+                      <b:navLink></b:navLink>
+                      <b:navLink header="Preview"/>
+                      <b:navLink value="Labels and Badges" outcome=""
+                                 icon="tag" iconAlign="right"/>
+                      <b:navLink value="Slider" outcome="" iconAwesome="sliders"/>
+                      <b:navCommandLink value="AJAX actionListener" actionListener="#{messagesBean.info}"
+                                        icon="tag" iconAlign="right" update="@form"/>
+                 
+                     
+                 
+                    </b:listLinks>
+                  </b:panel>
+                </b:column>
+                                
+                                <ui:insert name="left"> </ui:insert>
+                                </h:form>
+            </div>-->
+            <div id="content" class="right_content">
+
+
+                <ui:insert name="content">Content</ui:insert>
+            </div>
+        </div>
+        <div id="bottom">
+            <h:form>  
+                <p:growl id="messages" />
+
+
+
+            </h:form>
+            <ui:insert name="bottom"></ui:insert>
+        </div>
+
+    </h:body>
+
+
+</html>

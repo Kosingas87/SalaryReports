@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./../osnovni.xhtml">
+
+            <ui:define name="top">
+                
+            </ui:define>
+
+            <ui:define name="content">
+               <b:container fluid="true">
+                    <h2>
+                        <b:row>  
+                            <b:column medium-screen="6" offset="3">
+                                <b:label value="Managers in departments:"   />
+                            </b:column>
+                        </b:row>
+                    </h2>
+                    <b:row>  
+                        <br></br>
+                    </b:row>
+                    <h:form styleClass="jsfcrud_list_form">
+                        <br />
+                        <b:commandLink outcome="/deptManager/Create1" value="#{bundle.ListDeptManagerCreateLink}" look="default" style="width: 200px"/>
+<!--                          <b:label  value="#{bundle.ListDeptManagerEmpty}" rendered="#{deptManagerController.items.rowCount == 0}"/>-->
+                        <!--<b:panelGrid rendered="#{deptManagerController.items.rowCount > 0}">-->
+                        <!--<b:label  value="#{deptManagerController.pagination.pageFirstItem + 1}..#{deptManagerController.pagination.pageLastItem + 1}/#{deptManagerController.pagination.itemsCount}"/>&nbsp;-->
+
+                        <b:dataTable value="#{deptManagerController.items}"  var="item" pdf="true" >
+                             <b:dataTableColumn  value="#{item.detpManagerNo}" />
+                            <b:dataTableColumn  value="#{item.fromDate}" data-type="string"  >
+                                
+                            </b:dataTableColumn>
+                            <b:dataTableColumn  value="#{item.toDate}" data-type="string"  >
+                                
+                            </b:dataTableColumn>
+                            <b:dataTableColumn  value="#{item.deptNo}" />
+                            <b:dataTableColumn  value="#{item.empNo}" />
+                            <b:dataTableColumn  >
+                               <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{deptManagerController.prepareView}" value="#{bundle.ListDeptManagerViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{deptManagerController.prepareEdit}" value="#{bundle.ListDeptManagerEditLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{deptManagerController.destroy}" value="#{bundle.ListDeptManagerDestroyLink}"/>
+                        </h:column>
+                            </b:dataTableColumn>
+
+
+                        </b:dataTable>
+
+
+                    </h:form>
+
+
+
+
+                </b:container>
+            </ui:define>
+
+            <ui:define name="bottom">
+               
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

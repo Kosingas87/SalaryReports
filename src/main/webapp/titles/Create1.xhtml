@@ -1,0 +1,135 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <body>
+
+        <ui:composition template="./../osnovni.xhtml">
+
+            <ui:define name="top">
+
+            </ui:define>
+
+            <ui:define name="content">
+                <b:container fluid="true">
+                    <h2>
+                        <b:row>  
+                            <b:column medium-screen="6" offset="3">
+                                <b:label value="#{bundle.CreateTitlesTitle}"   />
+                            </b:column>
+                        </b:row>
+                    </h2>
+                    <b:row>  
+                        <br></br>
+                    </b:row>
+                    <h:form>
+                        <b:row>
+                            <b:column medium-screen="1" offset="2">
+                                <b:label value="Title name:"  id="titleName" style="font-size: 14px"/>
+                            </b:column>
+                            <b:column medium-screen="2">
+                                <b:inputText placeholder="Title" value="#{titlesController.selected.title}" title="#{bundle.CreateTitlesTitle_title}" required="true" requiredMessage="#{bundle.CreateTitlesRequiredMessage_title}" />
+                            </b:column>
+                            <b:column medium-screen="6">
+
+                            </b:column>
+                        </b:row>
+                        <br />
+                        <b:row>
+                            <b:column medium-screen="1" offset="2">
+                                <b:label value="From date:"  id="fromDate" style="font-size: 14px"/>
+                            </b:column>
+                            <b:column medium-screen="2">
+<!--                                <b:inputText  id="fromDates" placeholder="YYYY/MM/DD" value="#{titlesController.selected.fromDate}" title="#{bundle.CreateTitlesTitle_fromDate}" required="true" requiredMessage="#{bundle.CreateTitlesRequiredMessage_fromDate}" >
+                                    <f:convertDateTime pattern="dd-mm-yyyy" />
+                                </b:inputText>-->
+                                <b:dateTimePicker  value="#{titlesController.selected.fromDate}"   format="MM/DD/YYYY"/>
+                                              
+
+                        </b:column>
+                        <b:column medium-screen="6">
+                            <p:growl id="messages" showDetail="false"/> 
+                        </b:column>
+                    </b:row>
+                             <br />
+                    <b:row>
+                        <b:column medium-screen="1" offset="2">
+                            <b:label value="To date:" style="font-size: 14px"/>
+                        </b:column>
+                        <b:column medium-screen="2">
+<!--                                <b:inputText  id="toDate" placeholder="YYYY/MM/DD" value="#{titlesController.selected.toDate}" title="#{bundle.CreateTitlesTitle_toDate}" required="true" requiredMessage="#{bundle.CreateTitlesRequiredMessage_toDate}" >
+                                <f:convertDateTime pattern="dd-mm-yyyy" />
+                            </b:inputText>-->
+                            <b:dateTimePicker value="#{titlesController.selected.toDate}" format="MM/DD/YYYY"  />
+                                          
+                      
+                    </b:column>
+                    <b:column medium-screen="6">
+
+                    </b:column>
+                </b:row>
+                                  <br />
+                <b:row>
+                    <b:column medium-screen="1" offset="2">
+                        <b:label value="Employee:"   style="font-size: 14px"/>
+                    </b:column>
+                    <b:column medium-screen="2">
+                        <p:selectOneMenu id="employees" value="#{titlesController.selected.empNo}" title="#{bundle.CreateTitlesTitle_employees}" required="true" requiredMessage="#{bundle.CreateTitlesRequiredMessage_employees}" style="width: 250px">
+                            <f:selectItems value="#{employeesController.itemsAvailableSelectOne}"/>
+                        </p:selectOneMenu>
+                    </b:column>
+                    <b:column medium-screen="6">
+
+                    </b:column>
+                </b:row>
+
+
+
+
+
+
+                <br />
+                <b:row>  
+                    <b:column medium-screen="7" offset="3">
+                        <b:commandButton action="#{titlesController.create}" value="#{bundle.CreateTitlesSaveLink}"  look="info"  />
+                    </b:column>
+                </b:row>
+
+                <br />
+                <br />
+                <b:row>  
+                    <b:column medium-screen="6" offset="3">
+                        <b:commandButton action="#{titlesController.prepareList}" value="#{bundle.CreateTitlesShowAllLink}" immediate="true"/>
+
+                    </b:column>
+                </b:row>       
+
+
+                <br />
+                <br />
+<!--                <b:row>  
+                    <b:column medium-screen="6" offset="3">
+                        <b:link outcome="/glavna" value="#{bundle.CreateTitlesIndexLink}" />
+                    </b:column>
+                </b:row>-->
+
+
+            </h:form>
+
+
+        </b:container>
+    </ui:define>
+
+    <ui:define name="bottom">
+
+    </ui:define>
+
+</ui:composition>
+
+</body>
+</html>

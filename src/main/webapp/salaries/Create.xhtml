@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateSalariesTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateSalariesLabel_salariesNo}" for="salariesNo" />
+                    <h:inputText id="salariesNo" value="#{salariesController.selected.salariesNo}" title="#{bundle.CreateSalariesTitle_salariesNo}" required="true" requiredMessage="#{bundle.CreateSalariesRequiredMessage_salariesNo}"/>
+                    <h:outputLabel value="#{bundle.CreateSalariesLabel_salary}" for="salary" />
+                    <h:inputText id="salary" value="#{salariesController.selected.salary}" title="#{bundle.CreateSalariesTitle_salary}" required="true" requiredMessage="#{bundle.CreateSalariesRequiredMessage_salary}"/>
+                    <h:outputLabel value="#{bundle.CreateSalariesLabel_fromDate}" for="fromDate" />
+                    <h:inputText id="fromDate" value="#{salariesController.selected.fromDate}" title="#{bundle.CreateSalariesTitle_fromDate}" required="true" requiredMessage="#{bundle.CreateSalariesRequiredMessage_fromDate}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreateSalariesLabel_toDate}" for="toDate" />
+                    <h:inputText id="toDate" value="#{salariesController.selected.toDate}" title="#{bundle.CreateSalariesTitle_toDate}" required="true" requiredMessage="#{bundle.CreateSalariesRequiredMessage_toDate}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreateSalariesLabel_empNo}" for="empNo" />
+                    <h:selectOneMenu id="empNo" value="#{salariesController.selected.empNo}" title="#{bundle.CreateSalariesTitle_empNo}" required="true" requiredMessage="#{bundle.CreateSalariesRequiredMessage_empNo}">
+                        <f:selectItems value="#{employeesController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{salariesController.create}" value="#{bundle.CreateSalariesSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{salariesController.prepareList}" value="#{bundle.CreateSalariesShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateSalariesIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

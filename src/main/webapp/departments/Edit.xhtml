@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditDepartmentsTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditDepartmentsLabel_deptNo}" for="deptNo" />
+                    <h:inputText id="deptNo" value="#{departmentsController.selected.deptNo}" title="#{bundle.EditDepartmentsTitle_deptNo}" required="true" requiredMessage="#{bundle.EditDepartmentsRequiredMessage_deptNo}"/>
+                    <h:outputLabel value="#{bundle.EditDepartmentsLabel_deptName}" for="deptName" />
+                    <h:inputText id="deptName" value="#{departmentsController.selected.deptName}" title="#{bundle.EditDepartmentsTitle_deptName}" required="true" requiredMessage="#{bundle.EditDepartmentsRequiredMessage_deptName}"/>
+                </h:panelGrid>
+                <h:commandLink action="#{departmentsController.update}" value="#{bundle.EditDepartmentsSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditDepartmentsViewLink}"/>
+                <br />
+                <h:commandLink action="#{departmentsController.prepareList}" value="#{bundle.EditDepartmentsShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditDepartmentsIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

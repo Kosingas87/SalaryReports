@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateEmployeesTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateEmployeesLabel_empNo}" for="empNo" />
+                    <h:inputText id="empNo" value="#{employeesController.selected.empNo}" title="#{bundle.CreateEmployeesTitle_empNo}" required="true" requiredMessage="#{bundle.CreateEmployeesRequiredMessage_empNo}"/>
+                    <h:outputLabel value="#{bundle.CreateEmployeesLabel_birthDate}" for="birthDate" />
+                    <h:inputText id="birthDate" value="#{employeesController.selected.birthDate}" title="#{bundle.CreateEmployeesTitle_birthDate}" required="true" requiredMessage="#{bundle.CreateEmployeesRequiredMessage_birthDate}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreateEmployeesLabel_firstName}" for="firstName" />
+                    <h:inputText id="firstName" value="#{employeesController.selected.firstName}" title="#{bundle.CreateEmployeesTitle_firstName}" required="true" requiredMessage="#{bundle.CreateEmployeesRequiredMessage_firstName}"/>
+                    <h:outputLabel value="#{bundle.CreateEmployeesLabel_gender}" for="gender" />
+                    <h:inputText id="gender" value="#{employeesController.selected.gender}" title="#{bundle.CreateEmployeesTitle_gender}" required="true" requiredMessage="#{bundle.CreateEmployeesRequiredMessage_gender}"/>
+                    <h:outputLabel value="#{bundle.CreateEmployeesLabel_hireDate}" for="hireDate" />
+                    <h:inputText id="hireDate" value="#{employeesController.selected.hireDate}" title="#{bundle.CreateEmployeesTitle_hireDate}" required="true" requiredMessage="#{bundle.CreateEmployeesRequiredMessage_hireDate}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreateEmployeesLabel_lastName}" for="lastName" />
+                    <h:inputText id="lastName" value="#{employeesController.selected.lastName}" title="#{bundle.CreateEmployeesTitle_lastName}" />
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{employeesController.create}" value="#{bundle.CreateEmployeesSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{employeesController.prepareList}" value="#{bundle.CreateEmployeesShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateEmployeesIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

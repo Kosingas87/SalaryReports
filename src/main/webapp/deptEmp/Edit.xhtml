@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditDeptEmpTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditDeptEmpLabel_detpEmpNo}" for="detpEmpNo" />
+                    <h:inputText id="detpEmpNo" value="#{deptEmpController.selected.detpEmpNo}" title="#{bundle.EditDeptEmpTitle_detpEmpNo}" required="true" requiredMessage="#{bundle.EditDeptEmpRequiredMessage_detpEmpNo}"/>
+                    <h:outputLabel value="#{bundle.EditDeptEmpLabel_fromDate}" for="fromDate" />
+                    <h:inputText id="fromDate" value="#{deptEmpController.selected.fromDate}" title="#{bundle.EditDeptEmpTitle_fromDate}" required="true" requiredMessage="#{bundle.EditDeptEmpRequiredMessage_fromDate}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.EditDeptEmpLabel_toDate}" for="toDate" />
+                    <h:inputText id="toDate" value="#{deptEmpController.selected.toDate}" title="#{bundle.EditDeptEmpTitle_toDate}" required="true" requiredMessage="#{bundle.EditDeptEmpRequiredMessage_toDate}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.EditDeptEmpLabel_deptNo}" for="deptNo" />
+                    <h:selectOneMenu id="deptNo" value="#{deptEmpController.selected.deptNo}" title="#{bundle.EditDeptEmpTitle_deptNo}" required="true" requiredMessage="#{bundle.EditDeptEmpRequiredMessage_deptNo}">
+                        <f:selectItems value="#{departmentsController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.EditDeptEmpLabel_empNo}" for="empNo" />
+                    <h:selectOneMenu id="empNo" value="#{deptEmpController.selected.empNo}" title="#{bundle.EditDeptEmpTitle_empNo}" required="true" requiredMessage="#{bundle.EditDeptEmpRequiredMessage_empNo}">
+                        <f:selectItems value="#{employeesController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <h:commandLink action="#{deptEmpController.update}" value="#{bundle.EditDeptEmpSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditDeptEmpViewLink}"/>
+                <br />
+                <h:commandLink action="#{deptEmpController.prepareList}" value="#{bundle.EditDeptEmpShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditDeptEmpIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

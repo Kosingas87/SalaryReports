@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewDeptManagerTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewDeptManagerLabel_detpManagerNo}"/>
+                    <h:outputText value="#{deptManagerController.selected.detpManagerNo}" title="#{bundle.ViewDeptManagerTitle_detpManagerNo}"/>
+                    <h:outputText value="#{bundle.ViewDeptManagerLabel_fromDate}"/>
+                    <h:outputText value="#{deptManagerController.selected.fromDate}" title="#{bundle.ViewDeptManagerTitle_fromDate}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewDeptManagerLabel_toDate}"/>
+                    <h:outputText value="#{deptManagerController.selected.toDate}" title="#{bundle.ViewDeptManagerTitle_toDate}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewDeptManagerLabel_deptNo}"/>
+                    <h:outputText value="#{deptManagerController.selected.deptNo}" title="#{bundle.ViewDeptManagerTitle_deptNo}"/>
+                    <h:outputText value="#{bundle.ViewDeptManagerLabel_empNo}"/>
+                    <h:outputText value="#{deptManagerController.selected.empNo}" title="#{bundle.ViewDeptManagerTitle_empNo}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{deptManagerController.destroyAndView}" value="#{bundle.ViewDeptManagerDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewDeptManagerEditLink}"/>
+                <br />
+                <h:commandLink action="#{deptManagerController.prepareCreate}" value="#{bundle.ViewDeptManagerCreateLink}" />
+                <br />
+                <h:commandLink action="#{deptManagerController.prepareList}" value="#{bundle.ViewDeptManagerShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewDeptManagerIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

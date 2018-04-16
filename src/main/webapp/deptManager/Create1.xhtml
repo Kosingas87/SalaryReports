@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./../osnovni.xhtml">
+            <ui:define name="top"> </ui:define>
+
+            <ui:define name="left">
+
+            </ui:define>
+
+            <ui:define name="content">
+
+                <b:container fluid="true">
+                    <h2>
+                        <b:row>  
+                            <b:column medium-screen="6" offset="3">
+                                <b:label value="#{bundle.CreateDeptManagerTitle}"   />
+                            </b:column>
+                        </b:row>
+                    </h2>
+                    <b:row>  
+                        <br></br>
+                    </b:row>
+                   <h:form>
+                        <b:row>
+                            <b:column medium-screen="1" offset="2">
+                                <b:label value="From date:"  id="fromDate" style="font-size: 14px"/>
+                            </b:column>
+                            <b:column medium-screen="2">
+                                <b:dateTimePicker format="MM/DD/YYYY" value="#{deptManagerController.selected.fromDate}" />
+                                    
+
+                            </b:column>
+                            <b:column medium-screen="6">
+                                <p:growl id="messages" showDetail="false"/> 
+                            </b:column>
+                        </b:row>
+                       <br />
+                        <b:row>
+                            <b:column medium-screen="1" offset="2">
+                                <b:label value="To date:"  id="toDate" style="font-size: 14px"/>
+                            </b:column>
+                            <b:column medium-screen="2">
+                                <b:dateTimePicker format="MM/DD/YYYY" value="#{deptManagerController.selected.toDate}" />
+                                    
+
+                            </b:column>
+                            <b:column medium-screen="6">
+
+                            </b:column>
+                        </b:row>
+                       <br />
+                        <b:row>
+                            <b:column medium-screen="1" offset="2">
+                                <b:label value="Select Department:"  id="deptEmp" style="font-size: 14px"/>
+                            </b:column>
+                            <b:column medium-screen="2">
+                                <p:selectOneMenu style="width: 300px" id="departments" value="#{deptManagerController.selected.deptNo}" title="#{bundle.CreateDeptEmpTitle_departments}" required="true" requiredMessage="#{bundle.CreateDeptEmpRequiredMessage_departments}"  >
+                                      <f:selectItems value="#{departmentsController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </b:column>
+                            <b:column medium-screen="6">
+
+                            </b:column>
+                        </b:row>
+                       <br />
+                        <b:row>
+                            <b:column medium-screen="1" offset="2">
+                                <b:label value="Select Employee:"   style="font-size: 14px"/>
+                            </b:column>
+                            <b:column medium-screen="2">
+                                <p:selectOneMenu style="width: 300px" id="employees" value="#{deptManagerController.selected.empNo}" title="#{bundle.CreateDeptEmpTitle_employees}" required="true" requiredMessage="#{bundle.CreateDeptEmpRequiredMessage_employees}" >
+                                      <f:selectItems value="#{employeesController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </b:column>
+                            <b:column medium-screen="6">
+
+                            </b:column>
+                        </b:row>
+                       
+  
+                       
+                
+                      
+                        <br />
+                        <b:row>  
+                            <b:column medium-screen="7" offset="3">
+                                <b:commandButton action="#{deptManagerController.create}" value="#{bundle.CreateDeptManagerSaveLink}"  look="info"  />
+                            </b:column>
+                        </b:row>
+
+                        <br />
+                        <br />
+                        <b:row>  
+                            <b:column medium-screen="6" offset="3">
+                                <b:commandButton action="#{deptManagerController.prepareList}" value="#{bundle.CreateDeptManagerShowAllLink}" immediate="true"/>
+                     
+                       </b:column>
+                        </b:row>       
+                        
+
+                        <br />
+                        <br />
+                        <b:row>  
+                            <b:column medium-screen="6" offset="3">
+                                <b:link outcome="/glavna" value="#{bundle.CreateDeptManagerIndexLink}" />
+                            </b:column>
+                        </b:row>
+
+
+                    </h:form>
+
+
+                </b:container>
+            </ui:define>
+
+            <ui:define name="bottom">
+
+            </ui:define>
+
+
+
+        </ui:composition>
+    </body>
+</html>

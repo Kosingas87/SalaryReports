@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateTitlesTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateTitlesLabel_titlesNo}" for="titlesNo" />
+                    <h:inputText id="titlesNo" value="#{titlesController.selected.titlesNo}" title="#{bundle.CreateTitlesTitle_titlesNo}" required="true" requiredMessage="#{bundle.CreateTitlesRequiredMessage_titlesNo}"/>
+                    <h:outputLabel value="#{bundle.CreateTitlesLabel_title}" for="title" />
+                    <h:inputText id="title" value="#{titlesController.selected.title}" title="#{bundle.CreateTitlesTitle_title}" required="true" requiredMessage="#{bundle.CreateTitlesRequiredMessage_title}"/>
+                    <h:outputLabel value="#{bundle.CreateTitlesLabel_fromDate}" for="fromDate" />
+                    <h:inputText id="fromDate" value="#{titlesController.selected.fromDate}" title="#{bundle.CreateTitlesTitle_fromDate}" required="true" requiredMessage="#{bundle.CreateTitlesRequiredMessage_fromDate}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreateTitlesLabel_toDate}" for="toDate" />
+                    <h:inputText id="toDate" value="#{titlesController.selected.toDate}" title="#{bundle.CreateTitlesTitle_toDate}" >
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreateTitlesLabel_empNo}" for="empNo" />
+                    <h:selectOneMenu id="empNo" value="#{titlesController.selected.empNo}" title="#{bundle.CreateTitlesTitle_empNo}" required="true" requiredMessage="#{bundle.CreateTitlesRequiredMessage_empNo}">
+                        <f:selectItems value="#{employeesController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{titlesController.create}" value="#{bundle.CreateTitlesSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{titlesController.prepareList}" value="#{bundle.CreateTitlesShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateTitlesIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

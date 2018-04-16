@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <body>
+
+        <ui:composition template="./../osnovni.xhtml">
+
+            <ui:define name="top">
+                
+            </ui:define>
+
+            <ui:define name="content">
+            <b:container fluid="true">
+                    <h2>
+                        <b:row>  
+                            <b:column medium-screen="6" offset="3">
+                                <b:label value="Edit department:"   />
+                            </b:column>
+                        </b:row>
+                         <br />
+                         <h:form>
+                        <b:row>
+                            <b:column medium-screen="1" offset="2">
+
+                                <b:label value="Department no:" id="deptNo" style=" font-size: 14px"  />
+
+                            </b:column>
+                            <b:column medium-screen="2" >
+                                  <b:label value="#{departmentsController.selected.deptNo}" id="deptNos" style=" font-size: 14px"  />
+                            </b:column>
+                            <b:column medium-screen="6">
+
+                            </b:column>
+                        </b:row>
+                        <b:row>
+                            <b:column medium-screen="1" offset="2">
+                                <b:label value="Department name:"  id="deptName" style="font-size: 14px"/>
+                            </b:column>
+                            <b:column medium-screen="2">
+                               <b:label value="#{departmentsController.selected.deptName}"  id="deptNames" style="font-size: 14px"/>
+                                   
+                               
+
+                            </b:column>
+                            <b:column medium-screen="6">
+                                <p:growl id="messages" showDetail="false"/> 
+                            </b:column>
+                        </b:row>
+                       
+                
+                      
+                        <br />
+                        <b:row>  
+                            <b:column medium-screen="7" offset="3">
+                                <b:commandLink style="width: 200px" action="#{departmentsController.destroyAndView}" value="#{bundle.ViewDepartmentsDestroyLink}" style-class="some-class" look="info"  />
+                            </b:column>
+                        </b:row>
+
+                        <br />
+                        
+                        <b:row>  
+                            <b:column medium-screen="6" offset="3">
+                                <b:link outcome="Edit1" value="#{bundle.ViewDepartmentsEditLink}" style="font-size: 16px" />
+                            </b:column>
+                        </b:row>
+                          
+                          
+                          
+                        <b:row>  
+                            <b:column medium-screen="6" offset="3">
+                                <b:link outcome="List1" style="font-size: 16px" value="#{bundle.ViewDepartmentsShowAllLink}" immediate="true"/>
+                     
+                       </b:column>
+                        </b:row>       
+                        
+
+                        
+                        <br />
+<!--                        <b:row>  
+                            <b:column medium-screen="6" offset="3">
+                                <b:link outcome="/glavna" value="Home" style="font-size: 16px" />
+                            </b:column>
+                        </b:row>-->
+
+
+                    </h:form>
+                    </h2>
+                    <b:row>  
+                        <br></br>
+                    </b:row>
+                    
+
+
+
+
+
+                </b:container>
+            </ui:define>
+
+            <ui:define name="bottom">
+                
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>
