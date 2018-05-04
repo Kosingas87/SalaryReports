@@ -30,6 +30,34 @@
                         <br></br>
                     </b:row>
                    <h:form>
+                       <b:row>
+                            <b:column medium-screen="1" offset="2">
+                                <b:label value="Department:"  id="deptEmp" style="font-size: 14px"/>
+                            </b:column>
+                            <b:column medium-screen="2">
+                                <p:selectOneMenu style="width: 300px" id="departments" value="#{deptManagerController.selected.deptNo}" title="#{bundle.CreateDeptEmpTitle_departments}" required="true" requiredMessage="#{bundle.CreateDeptEmpRequiredMessage_departments}"  >
+                                      <f:selectItems value="#{departmentsController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </b:column>
+                            <b:column medium-screen="6">
+
+                            </b:column>
+                        </b:row>
+                       <br />
+                        <b:row>
+                            <b:column medium-screen="1" offset="2">
+                                <b:label value="Employee:"   style="font-size: 14px"/>
+                            </b:column>
+                            <b:column medium-screen="2">
+                                <p:selectOneMenu style="width: 300px" id="employees" value="#{deptManagerController.selected.empNo}" title="#{bundle.CreateDeptEmpTitle_employees}" required="true" requiredMessage="#{bundle.CreateDeptEmpRequiredMessage_employees}" >
+                                      <f:selectItems value="#{employeesController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </b:column>
+                            <b:column medium-screen="6">
+
+                            </b:column>
+                        </b:row>
+                        <br />
                         <b:row>
                             <b:column medium-screen="1" offset="2">
                                 <b:label value="From date:"  id="fromDate" style="font-size: 14px"/>
@@ -58,39 +86,13 @@
                             </b:column>
                         </b:row>
                        <br />
-                        <b:row>
-                            <b:column medium-screen="1" offset="2">
-                                <b:label value="Select Department:"  id="deptEmp" style="font-size: 14px"/>
-                            </b:column>
-                            <b:column medium-screen="2">
-                                <p:selectOneMenu style="width: 300px" id="departments" value="#{deptManagerController.selected.deptNo}" title="#{bundle.CreateDeptEmpTitle_departments}" required="true" requiredMessage="#{bundle.CreateDeptEmpRequiredMessage_departments}"  >
-                                      <f:selectItems value="#{departmentsController.itemsAvailableSelectOne}"/>
-                                </p:selectOneMenu>
-                            </b:column>
-                            <b:column medium-screen="6">
-
-                            </b:column>
-                        </b:row>
-                       <br />
-                        <b:row>
-                            <b:column medium-screen="1" offset="2">
-                                <b:label value="Select Employee:"   style="font-size: 14px"/>
-                            </b:column>
-                            <b:column medium-screen="2">
-                                <p:selectOneMenu style="width: 300px" id="employees" value="#{deptManagerController.selected.empNo}" title="#{bundle.CreateDeptEmpTitle_employees}" required="true" requiredMessage="#{bundle.CreateDeptEmpRequiredMessage_employees}" >
-                                      <f:selectItems value="#{employeesController.itemsAvailableSelectOne}"/>
-                                </p:selectOneMenu>
-                            </b:column>
-                            <b:column medium-screen="6">
-
-                            </b:column>
-                        </b:row>
+                        
                        
   
                        
                 
                       
-                        <br />
+                       
                         <b:row>  
                             <b:column medium-screen="7" offset="3">
                                 <b:commandButton action="#{deptManagerController.create}" value="#{bundle.CreateDeptManagerSaveLink}"  look="info"  />
@@ -109,11 +111,11 @@
 
                         <br />
                         <br />
-                        <b:row>  
+<!--                        <b:row>  
                             <b:column medium-screen="6" offset="3">
                                 <b:link outcome="/glavna" value="#{bundle.CreateDeptManagerIndexLink}" />
                             </b:column>
-                        </b:row>
+                        </b:row>-->
 
 
                     </h:form>
