@@ -28,6 +28,21 @@
                         <br></br>
                     </b:row>
                     <h:form>
+                         
+                <b:row>
+                    <b:column medium-screen="1" offset="2">
+                        <b:label value="Employee:"   style="font-size: 14px"/>
+                    </b:column>
+                    <b:column medium-screen="2">
+                        <p:selectOneMenu id="employees" value="#{titlesController.selected.empNo}" title="#{bundle.CreateTitlesTitle_employees}" required="true" requiredMessage="#{bundle.CreateTitlesRequiredMessage_employees}" style="width: 250px">
+                            <f:selectItems value="#{employeesController.itemsAvailableSelectOne}"/>
+                        </p:selectOneMenu>
+                    </b:column>
+                    <b:column medium-screen="6">
+
+                    </b:column>
+                </b:row>
+                        <br />
                         <b:row>
                             <b:column medium-screen="1" offset="2">
                                 <b:label value="Title name:"  id="titleName" style="font-size: 14px"/>
@@ -73,20 +88,7 @@
 
                     </b:column>
                 </b:row>
-                                  <br />
-                <b:row>
-                    <b:column medium-screen="1" offset="2">
-                        <b:label value="Employee:"   style="font-size: 14px"/>
-                    </b:column>
-                    <b:column medium-screen="2">
-                        <p:selectOneMenu id="employees" value="#{titlesController.selected.empNo}" title="#{bundle.CreateTitlesTitle_employees}" required="true" requiredMessage="#{bundle.CreateTitlesRequiredMessage_employees}" style="width: 250px">
-                            <f:selectItems value="#{employeesController.itemsAvailableSelectOne}"/>
-                        </p:selectOneMenu>
-                    </b:column>
-                    <b:column medium-screen="6">
-
-                    </b:column>
-                </b:row>
+                                 
 
 
 
