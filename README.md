@@ -19,8 +19,6 @@ Za kreiranje izveštaja plata korišćena je  Bootsfaces komponenta <b:dataTable
 
 
 
-## License
 
-Copyright © 2018 FIXME
 
 
