@@ -23,7 +23,7 @@
                     <h2>
                         <b:row>  
                             <b:column medium-screen="6" offset="3">
-                                <b:label value="View :"   />
+                                <b:label value="View:"   />
                             </b:column>
                         </b:row>
                         </h2>
@@ -31,24 +31,19 @@
                      <h:form>
                     
                         <br />
-                        
-                        <b:row>
+                         <b:row>
                             <b:column medium-screen="1" offset="2">
-                                <b:label value="#{bundle.ViewTitlesLabel_fromDate}"  id="fromDate" style="font-size: 14px"/>
+                                <b:label value="Employee:"   style="font-size: 14px"/>
                             </b:column>
                             <b:column medium-screen="2">
-                                <b:label  value="#{titlesController.selected.fromDate}"  />
-                                    
+                                <b:label style="width: 250px; font-size: 14px" id="employees" value="#{titlesController.selected.empNo}" />
+                                     
+                            </b:column>
+                            <b:column medium-screen="6">
 
                             </b:column>
-                            
-                            
-                            <b:column medium-screen="6">
-                                <p:growl id="messages" showDetail="false"/> 
-                            </b:column>
                         </b:row>
-                           
-                             <br />
+                           <br />
                         <b:row>
                             <b:column medium-screen="1" offset="2">
                                 <b:label value="Title:" id="tsalary" style="font-size: 14px"/>
@@ -62,6 +57,24 @@
 
                             </b:column>
                         </b:row>
+                           <br />
+                        <b:row>
+                            <b:column medium-screen="1" offset="2">
+                                <b:label value="From date:"  id="fromDate" style="font-size: 14px"/>
+                            </b:column>
+                            <b:column medium-screen="2">
+                                <b:label  value="#{titlesController.selected.fromDate}"  />
+                                    
+
+                            </b:column>
+                            
+                            
+                            <b:column medium-screen="6">
+                                <p:growl id="messages" showDetail="false"/> 
+                            </b:column>
+                        </b:row>
+                           
+                          
                              <br />
                         <b:row>
                             <b:column medium-screen="1" offset="2">
@@ -76,18 +89,7 @@
                             </b:column>
                         </b:row>
                              <br />
-                        <b:row>
-                            <b:column medium-screen="1" offset="2">
-                                <b:label value="Employee:"   style="font-size: 14px"/>
-                            </b:column>
-                            <b:column medium-screen="2">
-                                <b:label style="width: 250px; font-size: 14px" id="employees" value="#{titlesController.selected.empNo}" />
-                                     
-                            </b:column>
-                            <b:column medium-screen="6">
-
-                            </b:column>
-                        </b:row>
+                       
                        
                     <br />
                       
@@ -100,7 +102,7 @@
 
                         <br />
                         
-                        <b:row>  
+<!--                        <b:row>  
                             <b:column medium-screen="6" offset="3">
                                 <b:link outcome="Edit1" value="#{bundle.ViewTitlesEditLink}" style="font-size: 16px" />
                             </b:column>
@@ -113,7 +115,7 @@
                                 <b:link outcome="List1" style="font-size: 16px" value="List of titles" immediate="true"/>
                      
                        </b:column>
-                        </b:row>       
+                        </b:row>       -->
                         
 
                         

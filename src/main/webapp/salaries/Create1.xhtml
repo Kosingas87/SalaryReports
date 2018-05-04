@@ -28,6 +28,20 @@
                         <br></br>
                     </b:row>
                     <h:form>
+                         <b:row>
+                            <b:column medium-screen="1" offset="2">
+                                <b:label value="Select Employee:"   style="font-size: 14px"/>
+                            </b:column>
+                            <b:column medium-screen="2">
+                                <p:selectOneMenu style="width: 250px" id="employees" value="#{salariesController.selected.empNo}" title="#{bundle.CreateDeptEmpTitle_employees}" required="true" requiredMessage="#{bundle.CreateDeptEmpRequiredMessage_employees}" >
+                                      <f:selectItems value="#{employeesController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </b:column>
+                            <b:column medium-screen="6">
+
+                            </b:column>
+                        </b:row>
+                        <br />
                         <b:row>
                             <b:column medium-screen="1" offset="2">
                                 <b:label value="From date:"  id="fromDate" style="font-size: 14px"/>
@@ -42,19 +56,7 @@
                             </b:column>
                         </b:row>
                         <br />
-                          <b:row>
-                            <b:column medium-screen="1" offset="2">
-
-                                <b:label value="Salary:" id="salary" style="font-size: 14px"  />
-
-                            </b:column>
-                            <b:column medium-screen="2" >
-                                <b:inputText placeholder="Salary value:" value="#{salariesController.selected.salary}"/>
-                            </b:column>
-                            <b:column medium-screen="6">
-
-                            </b:column>
-                        </b:row>
+                         
                         <b:row>
                             <b:column medium-screen="1" offset="2">
                                 <b:label value="To date:"  id="toDate" style="font-size: 14px"/>
@@ -68,20 +70,21 @@
 
                             </b:column>
                         </b:row>
-                        <br />
-                        <b:row>
+                         <br />
+                         <b:row>
                             <b:column medium-screen="1" offset="2">
-                                <b:label value="Select Employee:"   style="font-size: 14px"/>
+
+                                <b:label value="Salary:" id="salary" style="font-size: 14px"  />
+
                             </b:column>
-                            <b:column medium-screen="2">
-                                <p:selectOneMenu style="width: 250px" id="employees" value="#{salariesController.selected.empNo}" title="#{bundle.CreateDeptEmpTitle_employees}" required="true" requiredMessage="#{bundle.CreateDeptEmpRequiredMessage_employees}" >
-                                      <f:selectItems value="#{employeesController.itemsAvailableSelectOne}"/>
-                                </p:selectOneMenu>
+                            <b:column medium-screen="2" >
+                                <b:inputText placeholder="Salary value:" value="#{salariesController.selected.salary}"/>
                             </b:column>
                             <b:column medium-screen="6">
 
                             </b:column>
                         </b:row>
+                       
                        
   
                        

@@ -22,7 +22,7 @@
                     <h2>
                         <b:row>  
                             <b:column medium-screen="6" offset="3">
-                                <b:label value="#{bundle.CreateEmployeesTitle}"   />
+                                <b:label value="Create new employee"   />
                             </b:column>
                         </b:row>
                     </h2>
@@ -44,23 +44,10 @@
 
                             </b:column>
                         </b:row>-->
+                        
                         <b:row>
                             <b:column medium-screen="1" offset="2">
-                                <b:label value="Birth date:"  id="birthDate" style="font-size: 14px"/>
-                            </b:column>
-                            <b:column medium-screen="2">
-                               <b:dateTimePicker format="MM/DD/YYYY" value="#{employeesController.selected.birthDate}" />
-                                   
-
-                            </b:column>
-                            <b:column medium-screen="6">
-                                <!--<p:growl id="messages" showDetail="true"/>--> 
-                            </b:column>
-                        </b:row>
- <br />
-                        <b:row>
-                            <b:column medium-screen="1" offset="2">
-                                <b:label value="First name:"  id="firstName" style="font-size: 14px"/>
+                                <b:label value="First name:"  id="firstName" style="font-size: 14px" />
                             </b:column>
                             <b:column medium-screen="2">
                                 <b:inputText placeholder="John" value="#{employeesController.selected.firstName}" />
@@ -71,7 +58,7 @@
                         </b:row>
                         <b:row>
                             <b:column medium-screen="1" offset="2">
-                                <b:label value="Last name:"  id="lastName" style="font-size: 14px"/>
+                                <b:label value="Last name:"  id="lastName" style="font-size: 14px" />
                             </b:column>
                             <b:column medium-screen="2">
                                 <b:inputText placeholder="John" value="#{employeesController.selected.lastName}" />
@@ -97,6 +84,20 @@
 
                             </b:column>
                         </b:row>
+<b:row>
+                            <b:column medium-screen="1" offset="2">
+                                <b:label value="Birth date:"  id="birthDate" style="font-size: 14px"/>
+                            </b:column>
+                            <b:column medium-screen="2">
+                               <b:dateTimePicker format="MM/DD/YYYY" value="#{employeesController.selected.birthDate}" />
+                                   
+
+                            </b:column>
+                            <b:column medium-screen="6">
+                                <!--<p:growl id="messages" showDetail="true"/>--> 
+                            </b:column>
+                        </b:row>
+ <br />
                         <b:row>
                             <b:column medium-screen="1" offset="2">
                                 <b:label value="Hire date"  id="hireDate" style="font-size: 14px"/>
@@ -121,7 +122,7 @@
                         <br />
                         <b:row>  
                             <b:column medium-screen="6" offset="3">
-                                <b:commandButton action="#{employeesController.prepareList}" value="#{bundle.CreateEmployeesShowAllLink}" immediate="true"/>
+                                <b:commandButton action="#{employeesController.prepareList}" value="#{bundle.CreateEmployeesShowAllLink}" immediate="true" />
                             </b:column>
                         </b:row>
 

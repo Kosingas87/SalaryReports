@@ -8,6 +8,7 @@
 <param-name>BootsFaces_USETHEME</param-name>
 <param-value>default</param-value>
 </context-param>
+
  <context-param>
      <param-name>primefaces.FONT_AWESOME</param-name>
      <param-value>true</param-value>

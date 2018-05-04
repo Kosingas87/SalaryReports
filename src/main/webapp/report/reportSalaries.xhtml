@@ -60,7 +60,6 @@
                            <br />
                            <b:row>
                             <b:column medium-screen="1" offset="3">
-                                <b:commandButton action="#{salariesController.vratiPlate(input1.value, input2.value)}" look="info" value="Show salaries"  style="width: 200px"/>
                             </b:column>
                            </b:row>
                            </h:form>
@@ -69,7 +68,7 @@
                         <b:panelGrid rendered="#{salariesController.items.rowCount > 0}">
                         <b:label  value="#{salariesController.pagination.pageFirstItem + 1}..#{salariesController.pagination.pageLastItem + 1}/#{salariesController.pagination.itemsCount}"/>&nbsp;-->
 
-                        <b:dataTable value="#{salariesController.items}"  var="item" pdf="true"  multi-column-search="true">
+<b:dataTable value="#{salariesController.items}" var="item" pdf="true"   multi-column-search="true" >
                             <b:dataTableColumn  value="#{item.fromDate}" data-type="string"  >
                                 
                             </b:dataTableColumn >
@@ -77,16 +76,11 @@
                                 
                             </b:dataTableColumn>
                             <b:dataTableColumn  value="#{item.salary}" />
-                            <b:dataTableColumn  value="#{item.empNo}" />
-                            <b:dataTableColumn  value="#{item.deptNo}" />
-                            <b:dataTableColumn  >
-                               <h:column>
-                            <f:facet name="header">
-                                <h:outputText value="&nbsp;"/>
-                            </f:facet>
-                         
-                        </h:column>
-                            </b:dataTableColumn>
+                            <b:dataTableColumn  value="#{item.empNo}" label="Employee" />
+                            
+                          
+                            
+                          
 
 
                         </b:dataTable>

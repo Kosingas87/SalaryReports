@@ -20,12 +20,40 @@
                     <h2>
                         <b:row>  
                             <b:column medium-screen="6" offset="3">
-                                <b:label value="Edit employees in departments:"   />
+                                <b:label value="Edit employee in the department:"   />
                             </b:column>
                         </b:row>
                         <br />
                         <br />
                          <h:form>
+                              <b:row>
+                            <b:column medium-screen="1" offset="2">
+                                <b:label value="Department:"  id="deptEmp" style="font-size: 14px"/>
+                            </b:column>
+                            <b:column medium-screen="2">
+                                <p:selectOneMenu style="width: 250px; font-size: 18px " id="departments" value="#{deptEmpController.selected.deptNo}" title="#{bundle.CreateDeptEmpTitle_deptNo}" required="true" requiredMessage="#{bundle.CreateDeptEmpRequiredMessage_departments}"  >
+                                      <f:selectItems value="#{departmentsController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </b:column>
+                            <b:column medium-screen="6">
+
+                            </b:column>
+                        </b:row>
+                             <br />
+                        <b:row>
+                            <b:column medium-screen="1" offset="2">
+                                <b:label value="Employee:"   style="font-size: 16px"/>
+                            </b:column>
+                            <b:column medium-screen="2">
+                                <p:selectOneMenu style="width: 250px; font-size: 18px" id="employees" value="#{deptEmpController.selected.empNo}" title="#{bundle.CreateDeptEmpTitle_employees}" required="true" requiredMessage="#{bundle.CreateDeptEmpRequiredMessage_employees}" >
+                                      <f:selectItems value="#{employeesController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </b:column>
+                            <b:column medium-screen="6">
+
+                            </b:column>
+                        </b:row>
+                        <br />
                         <b:row>
                             <b:column medium-screen="1" offset="2">
                                 <b:label value="From date:"  id="fromDate" style="font-size: 14px"/>
@@ -56,33 +84,6 @@
                             </b:column>
                         </b:row>
                              <br />
-                        <b:row>
-                            <b:column medium-screen="1" offset="2">
-                                <b:label value="Department:"  id="deptEmp" style="font-size: 14px"/>
-                            </b:column>
-                            <b:column medium-screen="2">
-                                <p:selectOneMenu style="width: 250px; font-size: 18px " id="departments" value="#{deptEmpController.selected.deptNo}" title="#{bundle.CreateDeptEmpTitle_deptNo}" required="true" requiredMessage="#{bundle.CreateDeptEmpRequiredMessage_departments}"  >
-                                      <f:selectItems value="#{departmentsController.itemsAvailableSelectOne}"/>
-                                </p:selectOneMenu>
-                            </b:column>
-                            <b:column medium-screen="6">
-
-                            </b:column>
-                        </b:row>
-                             <br />
-                        <b:row>
-                            <b:column medium-screen="1" offset="2">
-                                <b:label value="Employee:"   style="font-size: 16px"/>
-                            </b:column>
-                            <b:column medium-screen="2">
-                                <p:selectOneMenu style="width: 250px; font-size: 18px" id="employees" value="#{deptEmpController.selected.empNo}" title="#{bundle.CreateDeptEmpTitle_employees}" required="true" requiredMessage="#{bundle.CreateDeptEmpRequiredMessage_employees}" >
-                                      <f:selectItems value="#{employeesController.itemsAvailableSelectOne}"/>
-                                </p:selectOneMenu>
-                            </b:column>
-                            <b:column medium-screen="6">
-
-                            </b:column>
-                        </b:row>
                        
                 
                       
@@ -94,7 +95,7 @@
                         </b:row>
 
                         <br />
-                        
+<!--                        
                         <b:row>  
                             <b:column medium-screen="6" offset="3">
                                 <b:link outcome="View1" value="#{bundle.EditDepartmentsViewLink}" style="font-size: 16px" />
@@ -108,7 +109,7 @@
                                 <b:link outcome="List1" style="font-size: 16px"  value="List of employees in departments" immediate="true"/>
                      
                        </b:column>
-                        </b:row>       
+                        </b:row>       -->
                         
 
                       
