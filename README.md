@@ -1,4 +1,4 @@
-# Evicencija Plata #
+# Evidencija Plata #
 
 Evidencija plata je Java web aplikacija koja je namenjena za za evidenciju sektora kompanije, zaposlenih po sektorima, menadzera, titula  i plata.
 
