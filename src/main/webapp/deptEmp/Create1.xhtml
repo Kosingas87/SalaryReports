@@ -20,7 +20,7 @@
                     <h2>
                         <b:row>  
                             <b:column medium-screen="6" offset="3">
-                                <b:label value="#{bundle.CreateDeptEmpTitle}"   />
+                                <b:label value="Add an employee in department:"   />
                             </b:column>
                         </b:row>
                     </h2>
@@ -28,7 +28,36 @@
                         <br></br>
                     </b:row>
                     <h:form>
+                   
                         <b:row>
+                            <b:column medium-screen="1" offset="2">
+                                <b:label value="Department:"  id="deptEmp" style="font-size: 14px"/>
+                            </b:column>
+                            <b:column medium-screen="2">
+                                <p:selectOneMenu style="width: 300px" id="departments" value="#{deptEmpController.selected.deptNo}" title="#{bundle.CreateDeptEmpTitle_departments}" required="true" requiredMessage="#{bundle.CreateDeptEmpRequiredMessage_departments}"  >
+                                      <f:selectItems value="#{departmentsController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </b:column>
+                            <b:column medium-screen="6">
+
+                            </b:column>
+                        </b:row>
+                        <br />
+                        <b:row>
+                            <b:column medium-screen="1" offset="2">
+                                <b:label value="Employee:"   style="font-size: 14px"/>
+                            </b:column>
+                            <b:column medium-screen="2">
+                                <p:selectOneMenu style="width: 300px" id="employees" value="#{deptEmpController.selected.empNo}" title="#{bundle.CreateDeptEmpTitle_employees}" required="true" requiredMessage="#{bundle.CreateDeptEmpRequiredMessage_employees}" >
+                                      <f:selectItems value="#{employeesController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </b:column>
+                            <b:column medium-screen="6">
+
+                            </b:column>
+                        </b:row>
+                        <br />
+                            <b:row>
                             <b:column medium-screen="1" offset="2">
                                 <b:label value="From date:"  id="fromDate" style="font-size: 14px"/>
                             </b:column>
@@ -44,7 +73,7 @@
                         <br />
                         <b:row>
                             <b:column medium-screen="1" offset="2">
-                                <b:label value="Todate:"  id="toDate" style="font-size: 14px"/>
+                                <b:label value="To date:"  id="toDate" style="font-size: 14px"/>
                             </b:column>
                             <b:column medium-screen="2">
                                 <b:dateTimePicker format="MM/DD/YYYY" value="#{deptEmpController.selected.toDate}" />
@@ -55,40 +84,8 @@
 
                             </b:column>
                         </b:row>
-                        <br />
-                        <b:row>
-                            <b:column medium-screen="1" offset="2">
-                                <b:label value="Select Department:"  id="deptEmp" style="font-size: 14px"/>
-                            </b:column>
-                            <b:column medium-screen="2">
-                                <p:selectOneMenu style="width: 300px" id="departments" value="#{deptEmpController.selected.deptNo}" title="#{bundle.CreateDeptEmpTitle_departments}" required="true" requiredMessage="#{bundle.CreateDeptEmpRequiredMessage_departments}"  >
-                                      <f:selectItems value="#{departmentsController.itemsAvailableSelectOne}"/>
-                                </p:selectOneMenu>
-                            </b:column>
-                            <b:column medium-screen="6">
-
-                            </b:column>
-                        </b:row>
-                        <br />
-                        <b:row>
-                            <b:column medium-screen="1" offset="2">
-                                <b:label value="Select Employee:"   style="font-size: 14px"/>
-                            </b:column>
-                            <b:column medium-screen="2">
-                                <p:selectOneMenu style="width: 300px" id="employees" value="#{deptEmpController.selected.empNo}" title="#{bundle.CreateDeptEmpTitle_employees}" required="true" requiredMessage="#{bundle.CreateDeptEmpRequiredMessage_employees}" >
-                                      <f:selectItems value="#{employeesController.itemsAvailableSelectOne}"/>
-                                </p:selectOneMenu>
-                            </b:column>
-                            <b:column medium-screen="6">
-
-                            </b:column>
-                        </b:row>
+                        <br />                                                               
                        
-  
-                       
-                
-                      
-                        <br />
                         <b:row>  
                             <b:column medium-screen="7" offset="3">
                                 <b:commandButton action="#{deptEmpController.create}" value="#{bundle.CreateDeptEmpSaveLink}"  look="info"  />
@@ -107,11 +104,11 @@
 
                         <br />
                         <br />
-                        <b:row>  
+<!--                        <b:row>  
                             <b:column medium-screen="6" offset="3">
                                 <b:link outcome="/glavna" value="#{bundle.CreateDeptEmpIndexLink}" />
                             </b:column>
-                        </b:row>
+                        </b:row>-->
 
 
                     </h:form>
